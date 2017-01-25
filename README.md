@@ -5,7 +5,7 @@ This repository is a draft of a possible apiFramework.
 ##VAST4 AdVerification Interface
 The workflow if using this interface would look like this:
 The player needs to parse the VAST file. If it finds an AdVerification node it should execute the following steps:
-1. In case of JavaScriptResource:
+###1. In case of JavaScriptResource:
 - Write a same site iframe into the document and inject the AdVerification JavaScriptResource
 ```
   iframe = document.createElement('iframe');
@@ -46,5 +46,5 @@ The eventDispatcher parameter should support the following methods: subscribe, u
 adVerification.dispose();
 ```
 When this is done, the AdVerification adapter will fire the AdVerificationStopped event.
-2. In case of ActionScriptResource (flash):
+###2. In case of ActionScriptResource (flash):
 - The general workflow is the same as for the JavaScriptResource. The AdVerification adapter should be a swf file that is loaded directly by the player. The creativeData and environmentVars parameters of initAd() can be empty Strings. Events can be subscribed to using addEventListener() on adVerification.
